@@ -1,0 +1,4 @@
+.card-list {
+  /* margin-top: 2rem; */
+  grid-column: center-start/col-end 5;
+}

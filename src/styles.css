@@ -1,0 +1,94 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* you can force inheritance with inherit keyword - it is better in css community
+  to put box sizing in the body instead of up here */
+  /* change box model so that borders and paddings are no longer added to the total width or total height that we specify for a box. so we are getting rid of that behavior */
+}
+
+:root {
+  --main-bl-color: black;
+  --main-blue-color: #253d86;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 2rem;
+  color: var(--main-bl-color);
+}
+
+.App {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(8rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end])
+    [center-end]
+    minmax(8rem, 1fr) [full-end];
+  /* margin: 2rem; */
+}
+
+.App h1 {
+  grid-column: center-start/center-end;
+
+  margin-bottom: 2rem;
+}
+
+header {
+  background-color: var(--main-blue-color);
+  grid-column: 1/-1;
+  grid-row: 1;
+  height: 12rem;
+  margin-bottom: 2rem;
+}
+
+footer {
+  background-color: var(--main-blue-color);
+  grid-column: 1/-1;
+  grid-row: 1000;
+  height: 12rem;
+  margin-top: 2rem;
+}
+
+.download {
+  grid-column: col-end 5 / center-end;
+  margin-left: 2rem;
+}
+
+.download_text {
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-bg-color);
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+}
+
+a:hover {
+  color: blue;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--main-blue-color);
+  color: white;
+  font-weight: 600;
+  font-size: 2rem;
+
+  width: 15rem;
+  height: 5rem;
+  transition-duration: 0.4s;
+
+  border: none;
+  border-radius: 20rem;
+}
